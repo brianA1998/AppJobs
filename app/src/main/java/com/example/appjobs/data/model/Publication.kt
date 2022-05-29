@@ -1,6 +1,6 @@
 package com.example.appjobs.data.model
 
-import java.sql.Timestamp
+import com.google.firebase.Timestamp
 
 data class Publication(
     val profile_picture: String = "",
