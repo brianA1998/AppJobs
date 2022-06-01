@@ -9,9 +9,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.example.appjobs.R
 import com.example.appjobs.core.Resource
-import com.example.appjobs.data.remote.HomeScreenDataSource
+import com.example.appjobs.data.remote.home.HomeScreenDataSource
 import com.example.appjobs.databinding.FragmentHomeScreenBinding
-import com.example.appjobs.domain.HomeScreenRepoImpl
+import com.example.appjobs.domain.home.HomeScreenRepoImpl
 import com.example.appjobs.presentation.HomeScreenViewModel
 import com.example.appjobs.presentation.HomeScreenViewModelFactory
 import com.example.appjobs.ui.home.adapter.HomeScreenAdapter

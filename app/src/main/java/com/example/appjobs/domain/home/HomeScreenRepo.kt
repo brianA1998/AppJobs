@@ -1,4 +1,4 @@
-package com.example.appjobs.domain
+package com.example.appjobs.domain.home
 
 import com.example.appjobs.core.Resource
 import com.example.appjobs.data.model.Publication

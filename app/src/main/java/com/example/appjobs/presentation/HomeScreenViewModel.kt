@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.liveData
 import com.example.appjobs.core.Resource
-import com.example.appjobs.domain.HomeScreenRepo
+import com.example.appjobs.domain.home.HomeScreenRepo
 import kotlinx.coroutines.Dispatchers
 import java.lang.Exception
 
