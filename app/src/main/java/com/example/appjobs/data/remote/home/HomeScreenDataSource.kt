@@ -1,4 +1,4 @@
-package com.example.appjobs.data.remote
+package com.example.appjobs.data.remote.home
 
 import android.util.Log
 import com.example.appjobs.core.Resource
