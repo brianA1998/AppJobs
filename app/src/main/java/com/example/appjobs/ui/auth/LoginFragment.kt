@@ -31,10 +31,16 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         binding = FragmentLoginBinding.bind(view)
         isUserLoggedIn()
         doLogin()
+        goToSignUpPage()
     }
 
+    private fun goToSignUpPage() {
+        binding.txtSignup.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+        }
 
-    
+    }
+
     private fun isUserLoggedIn() {
         firebaseAuth.currentUser?.let {
             findNavController().navigate(R.id.action_loginFragment_to_homeScreenFragment)
