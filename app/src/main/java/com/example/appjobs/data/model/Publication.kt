@@ -7,4 +7,5 @@ data class Publication(
     val profile_name: String = "",
     val post_timestamp: Timestamp? = null,
     val publication_image: String = "",
+    val post_description: String = "",
 )
