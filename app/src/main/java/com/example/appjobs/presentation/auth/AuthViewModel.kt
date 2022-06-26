@@ -1,5 +1,6 @@
 package com.example.appjobs.presentation.auth
 
+import android.graphics.Bitmap
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.liveData
@@ -19,7 +20,7 @@ class AuthViewModel(private val repo: AuthRepo) : ViewModel() {
         }
     }
 
-    fun signUp(email: String, password: String, username : String) = liveData(Dispatchers.IO) {
+    fun signUp(email: String, password: String, username: String) = liveData(Dispatchers.IO) {
         emit(Result.Loading())
         try {
             emit(Result.Success(repo.signUp(email, password, username)))
@@ -28,10 +29,10 @@ class AuthViewModel(private val repo: AuthRepo) : ViewModel() {
         }
     }
 
-    fun updateUserProfile() = liveData(Dispatchers.IO){
+    fun updateUserProfile(imageBitmap: Bitmap, username: String) = liveData(Dispatchers.IO) {
         emit(Result.Loading())
         try {
-            emit(Result.Success(repo.signUp(email, password, username)))
+            emit(Result.Success(repo.updateProfile(imageBitmap, username)))
         } catch (e: Exception) {
             emit(Result.Failure(e))
         }
