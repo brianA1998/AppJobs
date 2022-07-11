@@ -66,7 +66,7 @@
                     }
                     is Result.Success -> {
                         binding.progressBar.visibility = View.GONE
-                        findNavController().navigate(R.id.action_registerFragment_to_homeScreenFragment)
+                        findNavController().navigate(R.id.action_registerFragment_to_setupProfileFragment)
                     }
                     is Result.Failure -> {
                         binding.progressBar.visibility = View.GONE
