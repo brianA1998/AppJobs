@@ -7,9 +7,9 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import com.example.appjobs.R
 import com.example.appjobs.databinding.FragmentCameraBinding
@@ -17,15 +17,27 @@ import com.example.appjobs.databinding.FragmentCameraBinding
 
 class CameraFragment : Fragment(R.layout.fragment_camera) {
 
-    private val REQUEST_IMAGE_CAPTURE = 1
+    private val REQUEST_IMAGE_CAPTURE = 2
     private lateinit var binding: FragmentCameraBinding
+    private var bitmap: Bitmap? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentCameraBinding.bind(view)
-        val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+
+        val resultLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                if (result.resultCode == Activity.RESULT_OK) {
+                    val imageBitmap = result.data?.extras?.get("data") as Bitmap
+                    binding.postImage.setImageBitmap(imageBitmap)
+                    bitmap = imageBitmap
+                }
+
+            }
+
         try {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
+            val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            resultLauncher.launch(takePictureIntent)
         } catch (e: ActivityNotFoundException) {
             Toast.makeText(
                 requireContext(),
@@ -35,13 +47,5 @@ class CameraFragment : Fragment(R.layout.fragment_camera) {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == REQUEST_IMAGE_CAPTURE && requestCode == Activity.RESULT_OK) {
-            val imageBitmap = data?.extras?.get("data") as Bitmap
-            Log.i("IMAGEN_CAPTURA", imageBitmap.toString())
-            binding.imgAddPhoto.setImageBitmap(imageBitmap)
-        }
-    }
 
 }

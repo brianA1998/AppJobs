@@ -4,12 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AppJobs/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/AppJobs/app/src/main/res/layout/fragment_camera.xml" value="0.192481884057971" />
+        <entry key="..\:/AppJobs/app/src/main/res/layout/fragment_camera.xml" value="0.18" />
         <entry key="..\:/AppJobs/app/src/main/res/layout/fragment_home_screen.xml" value="0.1661600810536981" />
         <entry key="..\:/AppJobs/app/src/main/res/layout/fragment_login.xml" value="0.1" />
         <entry key="..\:/AppJobs/app/src/main/res/layout/fragment_profile.xml" value="0.192481884057971" />
         <entry key="..\:/AppJobs/app/src/main/res/layout/fragment_register.xml" value="0.1" />
-        <entry key="..\:/AppJobs/app/src/main/res/layout/fragment_setup_profile.xml" value="0.1574074074074074" />
+        <entry key="..\:/AppJobs/app/src/main/res/layout/fragment_setup_profile.xml" value="0.1" />
         <entry key="..\:/AppJobs/app/src/main/res/layout/publication_item_view.xml" value="0.20175438596491227" />
         <entry key="..\:/AppJobs/app/src/main/res/menu/menu.xml" value="0.12685185185185185" />
         <entry key="..\:/AppJobs/app/src/main/res/menu/navigation_menu.xml" value="0.1" />
