@@ -1,7 +1,6 @@
 package com.example.appjobs.ui.camera
 
 import android.app.Activity
-import android.app.Activity.RESULT_OK
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.Bitmap
@@ -17,7 +16,6 @@ import com.example.appjobs.databinding.FragmentCameraBinding
 
 class CameraFragment : Fragment(R.layout.fragment_camera) {
 
-    private val REQUEST_IMAGE_CAPTURE = 2
     private lateinit var binding: FragmentCameraBinding
     private var bitmap: Bitmap? = null
 
@@ -32,7 +30,6 @@ class CameraFragment : Fragment(R.layout.fragment_camera) {
                     binding.postImage.setImageBitmap(imageBitmap)
                     bitmap = imageBitmap
                 }
-
             }
 
         try {
